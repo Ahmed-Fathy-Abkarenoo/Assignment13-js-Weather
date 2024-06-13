@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- -----google fonts--- -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=PT+Sans+Caption:wght@400;700&family=Pacifico&family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+    <!-- -----bootstrap---- -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- -----fontawsem---- -->
+    <link rel="stylesheet" href="css/all.min.css" />
+    <!-- -----style sheet----- -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>Weather</title>
+  </head>
+  <body data-bs-spy="scroll" data-bs-target="#myNavBar">
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg" id="myNavBar">
+      <div class="container my-4">
+        <a class="logo text-decoration-none text-white" href="#home">
+          <img src="imgs/logo@2x.png" alt="clouds" />
+          <div class="site-title d-inline-block ms-2"">
+            <h1 class="mb-0 fs-5 fw-medium" >Weather</h1>
+            <small class="text-secondary pt-0 fw-light">tagline goes here</small>
+          </div>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item me-2">
+              <a class="nav-link px-4 active" aria-current="page" href="#home"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item me-2">
+              <a class="nav-link px-4" href="#news">News</a>
+            </li>
+            <li class="nav-item me-2">
+              <a class="nav-link px-4" href="#live">Live Camera</a>
+            </li>
+            <li class="nav-item me-2">
+              <a class="nav-link px-4" href="#photos">Photos</a>
+            </li>
+            <li class="nav-item me-2">
+              <a class="nav-link px-4" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HOME SECTION -->
+    <section class="home-section h-100" id="#home">
+      <div class="container py-5">
+        <div class="row">
+          <div class="col">
+            <form class="position-relative mt-4 mb-5">
+              <input
+                class="form-control rounded-pill text-white border-0 py-1"
+                type="text"
+                id="locationSearch"
+                name="country"
+                value=""
+                placeholder="Find Your Location..."
+              />
+              <button
+                class="btn position-absolute top-0 end-0 rounded-pill px-5 me-1 f-family"
+                id="findBtn"
+                type="button"
+              >
+                Find
+              </button>
+            </form>
+          </div>
+        </div>
+        <div
+          class="row g-0 border rounded-4 overflow-hidden mt-5 mb-5"
+          id="cardsContainer"
+        >
+          <!-- <div class="col-lg-4">
+            <div class="card rounded-0 text-white pt-0" id="mainCard">
+              <div
+                class="card-title d-flex justify-content-between align-items-center pt-3 px-2"
+              >
+                <p class="day">monday</p>
+                <p class="date">21 june</p>
+              </div>
+              <div class="card-body">
+                <p class="fs-4" id="city">cairo</p>
+                <p class="fs-1 fw-bold" id="temp">35</p>
+                <img src="imgs/113.png" alt="status" />
+                <p class="mt-2 text-info">${data.current.condition.text}</p>
+                <div class="d-flex mt-4">
+                  <div>
+                    <img src="imgs/icon-compass@2x.png" alt="" class="w-25" />
+                    <p class="d-inline-block">20%</p>
+                  </div>
+                  <div>
+                    <img src="imgs/icon-umberella@2x.png" alt="" class="w-25" />
+                    <p class="d-inline-block">18km/h</p>
+                  </div>
+                  <div>
+                    <img src="imgs/icon-wind@2x.png" alt="" class="w-25" />
+                    <p class="d-inline-block">East</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> -->
+          <!-- <div class="col-lg-4">
+            <div class="card first-card rounded-0 text-white" id="secondryCard">
+              <div class="card-title pt-3 text-center">
+                <p class="day">friday</p>
+              </div>
+              <div class="card-body" id="userPosition">
+                <p class="lat">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Atque provident earum error explicabo harum asperiores,
+                  obcaecati a mollitia voluptates unde?
+                </p>
+                <p class="log">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Atque provident earum error explicabo harum asperiores,
+                  obcaecati a mollitia voluptates unde?
+                </p>
+              </div>
+            </div>
+          </div> -->
+          <!-- <div class="col-lg-4">
+            <div class="card second-card rounded-0 text-white">
+              <div class="card-title pt-3 text-center">
+                <p class="day">saturday</p>
+              </div>
+              <div class="card-body">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Atque provident earum error explicabo harum asperiores,
+                  obcaecati a mollitia voluptates unde?
+                </p>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Atque provident earum error explicabo harum asperiores,
+                  obcaecati a mollitia voluptates unde?
+                </p>
+              </div>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER SECTION -->
+    <footer class="text-white t-5">
+      <div class="container pb-5">
+        <div class="row">
+          <div class="col d-flex flex-column flex-lg-row">
+            <div class="form-container col-lg-8 col-12">
+              <form class="position-relative mt-5 mb-3">
+                <input
+                  class="form-control w-100 rounded-pill text-white border-0 py-1"
+                  type="email"
+                  id="locationSearch"
+                  name="userEmail"
+                  value=""
+                  placeholder="Enter your Email to Subscribe..."
+                />
+                <button
+                  class="btn position-absolute top-0 end-0 rounded-pill px-5 me-1 f-family"
+                  type="submit"
+                >
+                  Subscribe
+                </button>
+              </form>
+            </div>
+            <div
+              class="social-icons col-lg-4 col-12 d-flex justify-content-center align-items-center"
+              id="subscribeBtn"
+            >
+              <a href=""><i class="fa-brands fa-facebook-f fa-xl"></i></a>
+              <a href=""><i class="fa-brands fa-twitter fa-xl"></i></a>
+              <a href=""><i class="fa-brands fa-google-plus fa-xl"></i></a>
+              <a href=""><i class="fa-brands fa-pinterest fa-xl"></i></a>
+            </div>
+          </div>
+        </div>
+        <p class="py-3">
+          Copyright@ 2024. Designed by Ahmed Fathy. All rights reserved
+        </p>
+      </div>
+    </footer>
+
+    
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
